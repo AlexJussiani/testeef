@@ -17,8 +17,8 @@ namespace testeef.Models
     [MaxLength(1024, ErrorMessage = "Este campo deve conter entre 3 a 60 caracteres")]
     public string Description {get; set ;}
 
-    //[Required(ErrorMessage = "Este Campo é obrigatório")]
-    //[Range(1, int.MaxValue, ErrorMessage = "O preço deve ser maior que zero")]
+    [Required(ErrorMessage = "Este Campo é obrigatório")]
+    [Range(1, int.MaxValue, ErrorMessage = "O preço deve ser maior que zero")]
     public string Price {get; set ;}
 
      [Required(ErrorMessage = "Este Campo é obrigatório")]
