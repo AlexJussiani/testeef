@@ -741,11 +741,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Documentos\\Projeto\\testeef\\testeef.csproj",
+      "projectUniqueName": "E:\\Documentos\\Projetos\\testeef\\testeef.csproj",
       "projectName": "testeef",
-      "projectPath": "E:\\Documentos\\Projeto\\testeef\\testeef.csproj",
+      "projectPath": "E:\\Documentos\\Projetos\\testeef\\testeef.csproj",
       "packagesPath": "C:\\Users\\alex\\.nuget\\packages\\",
-      "outputPath": "E:\\Documentos\\Projeto\\testeef\\obj\\",
+      "outputPath": "E:\\Documentos\\Projetos\\testeef\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
