@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -21,11 +22,11 @@ namespace testeef.Controller
 
     [HttpPost]
     [Route("")]
-
     public async Task<ActionResult<Category>> Post(
       [FromServices] DataContext context,
       [FromBody] Category model)
     {
+      Console.WriteLine("Teste!");
       if(ModelState.IsValid){
         context.Categories.Add(model);
         await context.SaveChangesAsync();

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,6 +17,7 @@ namespace testeef.Controller
     [Route("")]
     public async Task<ActionResult<List<Product>>> Get([FromServices] DataContext context)
     {
+      Console.Write("teste get");
       var product =  await context.Products.Include(x => x.Category).ToListAsync();
       return product;
 ;
@@ -25,6 +27,7 @@ namespace testeef.Controller
     [Route("{id:int}")]
     public async Task<ActionResult<Product>> GetById([FromServices] DataContext context, int id)
     {
+      Console.Write("teste get com id");
       var product = await context.Products.Include(x => x.Category)
       .AsNoTracking()
       .FirstOrDefaultAsync(x => x.Id == id);
@@ -45,11 +48,12 @@ namespace testeef.Controller
     }
 
     [HttpPost]
-    [Route("")]
+    [Route("")]    
     public async Task<ActionResult<Product>> Post(
       [FromServices] DataContext context,
       [FromBody] Product model)
-    {
+    {     
+      Console.WriteLine("Teste Post!");
       if(ModelState.IsValid){
         context.Products.Add(model);
         await context.SaveChangesAsync();
