@@ -16,8 +16,7 @@ namespace testeef.Controller
     [HttpGet]
     [Route("")]
     public async Task<ActionResult<List<Product>>> Get([FromServices] DataContext context)
-    {
-      Console.Write("teste get");
+    {      
       var product =  await context.Products.Include(x => x.Category).ToListAsync();
       return product;
 ;
@@ -27,7 +26,6 @@ namespace testeef.Controller
     [Route("{id:int}")]
     public async Task<ActionResult<Product>> GetById([FromServices] DataContext context, int id)
     {
-      Console.Write("teste get com id");
       var product = await context.Products.Include(x => x.Category)
       .AsNoTracking()
       .FirstOrDefaultAsync(x => x.Id == id);
